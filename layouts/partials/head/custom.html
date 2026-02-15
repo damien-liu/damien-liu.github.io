@@ -1,0 +1,162 @@
+{{/* ==========================================================================
+Custom Head — SEO Meta & JSON-LD Structured Data
+Hugo Theme Stack injects this partial inside
+
+<head> automatically.
+  ========================================================================== */}}
+
+  <!-- Meta Description (homepage / fallback) -->
+  {{ if .IsHome }}
+  <meta name="description"
+    content="Damien Liu — Tokyo-based Software Engineer specialising in AI Automation, Financial Data Science, and full-stack systems. Building intelligent solutions at the intersection of code and capital markets.">
+  <meta name="keywords"
+    content="AI Automation, Financial Data Science, Tokyo Developer, Full-Stack Engineer, Python, AI Agent, Stock Analysis, ETF Investment, Software Consulting">
+  <meta name="author" content="Damien Liu">
+  <link rel="canonical" href="{{ .Site.BaseURL }}">
+
+  <!-- Open Graph enhancements -->
+  <meta property="og:title" content="Damien Liu | AI &amp; Full-Stack Engineer — Tokyo">
+  <meta property="og:description"
+    content="Automating Complexity. Engineering Clarity. AI Automation, Financial Data Science, and full-stack systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Site.BaseURL }}">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Damien Liu | AI &amp; Full-Stack Engineer — Tokyo">
+  <meta name="twitter:description"
+    content="Automating Complexity. Engineering Clarity. AI Automation, Financial Data Science, and full-stack development.">
+
+  <!-- JSON-LD: Person Schema (Google Knowledge Graph) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Damien Liu",
+  "alternateName": "Damien.L",
+  "url": "https://damien-liu.github.io",
+  "image": "https://damien-liu.github.io/img/avatar.jpg",
+  "jobTitle": "Software Engineer",
+  "description": "Tokyo-based Software Engineer specialising in AI Automation, Financial Data Science, and full-stack development. Certified in Japanese financial and IT qualifications (Boki, Takken, FP, FE/AP).",
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "AI Agent Development",
+    "AI Automation",
+    "Financial Data Science",
+    "Stock & ETF Analysis",
+    "Python",
+    "C#",
+    "Java",
+    "VB.NET",
+    "Full-Stack Development",
+    "3D Digital Art",
+    "Blender"
+  ],
+  "knowsLanguage": ["zh", "en", "ja"],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Boki (Japanese Bookkeeping)"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Takken (Real Estate Transaction Specialist)"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "FP (Financial Planner)"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "FE/AP (Fundamental/Applied Information Technology Engineer)"
+    }
+  ],
+  "workLocation": {
+    "@type": "Place",
+    "name": "Tokyo, Japan",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tokyo",
+      "addressCountry": "JP"
+    }
+  },
+  "sameAs": [
+    "https://github.com/damien-liu",
+    "https://www.linkedin.com/in/damien-liu"
+  ]
+}
+</script>
+
+  <!-- JSON-LD: WebSite Schema (Sitelinks Search Box eligibility) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Damien Liu | AI & Full-Stack Engineer",
+  "alternateName": "Damien Liu Portfolio",
+  "url": "https://damien-liu.github.io",
+  "description": "Technical writing and engineering insights on AI Automation, Financial Data Science, and full-stack development by Damien Liu.",
+  "author": {
+    "@type": "Person",
+    "name": "Damien Liu",
+    "url": "https://damien-liu.github.io"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Damien Liu"
+  },
+  "inLanguage": "en-US",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://damien-liu.github.io/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+  {{ else if .IsPage }}
+  <!-- Per-page meta description from front matter -->
+  {{ with .Description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
+  <meta name="author" content="Damien Liu">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- JSON-LD: BlogPosting Schema for articles -->
+  {{ if eq .Section "post" }}
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}"" {{ end }},
+  "url": {{ .Permalink | jsonify }},
+  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": "Damien Liu",
+    "url": "https://damien-liu.github.io"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Damien Liu",
+    "url": "https://damien-liu.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  },
+  "wordCount": {{ .WordCount }},
+  "inLanguage": "en-US"{{ if .Params.categories }},
+  "articleSection": {{ .Params.categories | jsonify }}{{ end }}{{ if .Params.tags }},
+  "keywords": {{ .Params.tags | jsonify }}{{ end }}
+}
+</script>
+  {{ end }}
+  {{ end }}
