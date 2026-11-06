@@ -4,64 +4,183 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Damien Liu — Full-Stack Engineer &amp; Team Lead, Tokyo</title>
-<meta name="description" content="Damien Liu is a Tokyo-based full-stack engineer and team lead working across Java, TypeScript, Angular, C# and AWS. This page indexes his website, writing, and public projects.">
+<meta name="description" content="Damien Liu is a Tokyo-based full-stack engineer and team lead working across Java, TypeScript, Angular, C# and AWS. Index of his website, writing, and public projects.">
 <link rel="canonical" href="https://damien-liu.com/">
+<meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23141414'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FAFAF8' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="me" href="https://github.com/damien-liu">
+<link rel="me" href="https://www.linkedin.com/in/damien-liu">
+<link rel="me" href="https://x.com/The_DamienLiu">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Damien Liu — Full-Stack Engineer & Team Lead, Tokyo">
+<meta property="og:title" content="Damien Liu — Full-Stack Engineer &amp; Team Lead, Tokyo">
 <meta property="og:description" content="Tokyo-based full-stack engineer leading a small team. Website, writing, and public projects, indexed in one place.">
 <meta property="og:url" content="https://damien-liu.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@The_DamienLiu">
+<meta name="twitter:title" content="Damien Liu — Full-Stack Engineer &amp; Team Lead, Tokyo">
+<meta name="twitter:description" content="Tokyo-based full-stack engineer leading a small team. Website, writing, and public projects, indexed in one place.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Damien Liu","jobTitle":"Full-Stack Engineer & Team Lead","address":{"@type":"PostalAddress","addressLocality":"Tokyo","addressCountry":"JP"},"url":"https://damien-liu.com/","sameAs":["https://damien-liu.com/","https://github.com/damien-liu","https://www.linkedin.com/in/damien-liu"]}
+{"@context":"https://schema.org","@type":"Person","name":"Damien Liu","jobTitle":"Full-Stack Engineer & Team Lead","description":"Tokyo-based full-stack engineer leading a small team, working across Java, TypeScript, Angular, C# and AWS. Currently studying AI and machine learning.","address":{"@type":"PostalAddress","addressLocality":"Tokyo","addressCountry":"JP"},"url":"https://damien-liu.com/","sameAs":["https://damien-liu.com/","https://github.com/damien-liu","https://www.linkedin.com/in/damien-liu","https://x.com/The_DamienLiu"],"knowsAbout":["Java","TypeScript","Angular","C#","Python","AWS","Machine Learning"]}
 </script>
 <style>
-  body{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;background:#F9F8F6;color:#1A1A1A;line-height:1.6}
-  main{max-width:720px;margin:0 auto;padding:48px 20px 64px}
-  .eyebrow{letter-spacing:.12em;font-size:12px;color:#777;text-transform:uppercase}
-  h1{font-size:32px;line-height:1.25;margin:8px 0 12px}
-  h2{font-size:18px;margin:36px 0 8px}
-  a{color:#BC2732;text-decoration:none}
-  a:hover{text-decoration:underline}
-  ul{padding-left:20px}
-  li{margin:6px 0}
-  .card{background:#fff;border:1px solid #E5E3DF;border-radius:10px;padding:20px 22px;margin-top:24px}
-  .small{color:#666;font-size:14px}
+  :root{
+    --bg:#FAFAF8; --ink:#141414; --muted:#6F6F68; --line:#E3E1DA; --accent:#BC2732;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#101010; --ink:#EDEDE8; --muted:#9B9B93; --line:#262624; --accent:#E0564B; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.65;font-size:16px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  .topbar{display:flex;justify-content:space-between;align-items:baseline;
+    padding:22px 0 18px;border-bottom:1px solid var(--line);
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .topbar .brand{font-weight:700}
+  .topbar .place{color:var(--muted)}
+  header{padding:72px 0 8px}
+  h1{font-family:"Iowan Old Style",Palatino,Palatino Linotype,Georgia,"Times New Roman",serif;
+    font-weight:600;font-size:clamp(52px,10vw,84px);line-height:1.02;letter-spacing:-.01em;margin:0}
+  .role{margin:18px 0 0;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .intro{margin:26px 0 0;max-width:58ch;font-size:18px;line-height:1.75}
+  .intro a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
+  section{margin-top:64px}
+  .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  .rows{border-bottom:1px solid var(--line)}
+  a.row{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:baseline;
+    padding:20px 4px;border-top:1px solid var(--line);text-decoration:none;transition:background .18s ease}
+  a.row:hover{background:rgba(127,127,120,.06)}
+  .row .no{font-size:12px;letter-spacing:.14em;color:var(--muted)}
+  .row .t{font-size:19px;font-weight:600;line-height:1.35}
+  .row .d{display:block;font-size:14px;font-weight:400;color:var(--muted);margin-top:3px;line-height:1.55}
+  .row .arr{font-size:18px;color:var(--muted);transition:transform .18s ease,color .18s ease}
+  a.row:hover .arr{transform:translateX(4px);color:var(--accent)}
+  .srow{display:grid;grid-template-columns:136px 1fr;gap:16px;align-items:baseline;margin:0;padding:15px 0;border-top:1px solid var(--line)}
+  .srow:last-child{border-bottom:1px solid var(--line)}
+  .srow b{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .srow span{font-size:17px;letter-spacing:.02em}
+  .now p{margin:0;padding:14px 0;border-top:1px solid var(--line);font-size:16px}
+  .now p:last-child{border-bottom:1px solid var(--line)}
+  .now b{display:inline-block;width:172px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .note{color:var(--muted);font-size:14px;margin-top:14px}
+  footer{margin:80px 0 0;border-top:1px solid var(--line);padding:22px 0 40px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--accent)}
+  @media (max-width:560px){
+    header{padding:52px 0 4px}
+    a.row{grid-template-columns:32px 1fr auto;gap:10px}
+    .now b{display:block;margin-bottom:2px}
+    .srow{grid-template-columns:1fr;gap:4px}
+  }
 </style>
 </head>
 <body>
-<main>
-  <p class="eyebrow">Damien Liu / Tokyo, Japan</p>
-  <h1>Full-stack engineer &amp; team lead, building systems end to end.</h1>
-  <p>I design, build, and operate web systems across the whole stack: Angular and TypeScript on the frontend, Java, Spring Boot, and C# on the backend, through to delivery and operations on AWS. I lead a small team and stay hands-on throughout.</p>
-  <p>Most of my professional work lives in private repositories for client projects. This page is a simple index of my public home on the web.</p>
+<div class="wrap">
 
-  <div class="card">
-    <h2 style="margin-top:0">Start here</h2>
-    <ul>
-      <li><a href="https://damien-liu.com/">damien-liu.com</a> — my website and portfolio</li>
-      <li><a href="https://damien-liu.com/about/">About me</a> — full profile and experience</li>
-      <li><a href="https://damien-liu.com/lab/">Selected work</a> — projects and case studies</li>
-      <li><a href="https://www.linkedin.com/in/damien-liu">LinkedIn</a> — work history</li>
-    </ul>
+  <div class="topbar">
+    <span class="brand">Damien Liu</span>
+    <span class="place">Tokyo, Japan</span>
   </div>
 
-  <h2>Writing</h2>
-  <ul>
-    <li><a href="https://damien-liu.com/blog/">Engineering notes</a> — all articles on my site</li>
-    <li><a href="https://damien-liu.com/blog/hugo-to-astro-migration/">System Iteration: Why I Migrated to Astro After 60 Days</a></li>
-    <li><a href="https://damien-liu.com/blog/ros2-foxy-moveit-docker/">Setting up ROS2 Foxy and MoveIt 2 with Docker</a></li>
-  </ul>
-  <p class="small">Coming next: notes on AI algorithms (rebuilding my fundamentals in public) and on Rust for the systems layer of AI.</p>
+  <header>
+    <h1>Damien Liu</h1>
+    <p class="role">Full-Stack Engineer &amp; Team Lead</p>
+    <p class="intro">I&rsquo;m a team lead based in Tokyo. I design, build, and run web systems end to end. This page is the index. The full archive lives at <a href="https://damien-liu.com/">damien-liu.com</a>.</p>
+  </header>
 
-  <h2>Public projects &amp; learning</h2>
-  <ul>
-    <li><a href="https://github.com/damien-liu">GitHub profile</a> — public learning repositories and experiments</li>
-    <li><a href="https://damien-liu.com/lab/trading-analyzer/">Trading Analyzer</a> — an independent project, currently in private beta</li>
-  </ul>
+  <main>
+    <section aria-label="Index">
+      <p class="label">Index</p>
+      <div class="rows">
+        <a class="row" href="https://damien-liu.com/">
+          <span class="no">01</span>
+          <span><span class="t">The Website</span><span class="d">damien-liu.com — portfolio, writing, and the full archive</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://damien-liu.com/about/">
+          <span class="no">02</span>
+          <span><span class="t">About</span><span class="d">Full profile, experience, and how I work</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://damien-liu.com/lab/">
+          <span class="no">03</span>
+          <span><span class="t">Selected Work</span><span class="d">Projects and case studies</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://damien-liu.com/blog/">
+          <span class="no">04</span>
+          <span><span class="t">Writing</span><span class="d">Engineering notes and essays</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+      </div>
+    </section>
 
-  <h2>Currently</h2>
-  <p>Studying AI and machine learning from the fundamentals up, and learning Rust with an eye on inference, data pipelines, and tooling — the systems layer of AI.</p>
+    <section aria-label="Selected writing">
+      <p class="label">Selected Writing</p>
+      <div class="rows">
+        <a class="row" href="https://damien-liu.com/blog/hugo-to-astro-migration/">
+          <span class="no">&mdash;</span>
+          <span><span class="t">System Iteration: Why I Migrated to Astro After 60 Days</span><span class="d">Rebuilding this site&rsquo;s foundation, and what the migration taught me</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://damien-liu.com/blog/ros2-foxy-moveit-docker/">
+          <span class="no">&mdash;</span>
+          <span><span class="t">Setting up ROS2 Foxy and MoveIt 2 with Docker</span><span class="d">A reproducible robotics development environment, containerised</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+      </div>
+      <p class="note">Forthcoming: notes on AI algorithms, rebuilding my fundamentals in public.</p>
+    </section>
 
-  <p class="small" style="margin-top:40px">This is a satellite index page. The canonical home of everything above is <a href="https://damien-liu.com/">damien-liu.com</a>.</p>
-</main>
+    <section aria-label="Expertise">
+      <p class="label">Stack</p>
+      <p class="srow"><b>Languages</b><span>Java &middot; TypeScript &middot; C# &middot; Python</span></p>
+      <p class="srow"><b>Frameworks</b><span>Angular &middot; Vue &middot; React &middot; Astro</span></p>
+    </section>
+
+    <section class="now" aria-label="Currently">
+      <p class="label">Currently</p>
+      <p><b>AI &amp; Data Science</b> Artificial intelligence, machine learning, and data science — mainly through hands-on projects and written notes.</p>
+    </section>
+
+    <section aria-label="Elsewhere">
+      <p class="label">Elsewhere</p>
+      <div class="rows">
+        <a class="row" href="https://github.com/damien-liu">
+          <span class="no">&mdash;</span>
+          <span><span class="t">GitHub</span><span class="d">Public learning repositories and experiments. Most of my professional work lives in private repositories for client projects.</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://www.linkedin.com/in/damien-liu">
+          <span class="no">&mdash;</span>
+          <span><span class="t">LinkedIn</span><span class="d">Work history and contact</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://x.com/The_DamienLiu">
+          <span class="no">&mdash;</span>
+          <span><span class="t">X</span><span class="d">@The_DamienLiu</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+        <a class="row" href="https://damien-liu.com/lab/trading-analyzer/">
+          <span class="no">&mdash;</span>
+          <span><span class="t">Trading Analyzer</span><span class="d">An independent project, currently in private beta</span></span>
+          <span class="arr">&rarr;</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Damien Liu &mdash; Tokyo</span>
+    <a href="https://damien-liu.com/">damien-liu.com &nearr;</a>
+  </footer>
+
+</div>
 </body>
 </html>
